@@ -1,9 +1,9 @@
 import { createClient } from "redis";
 
-const client = createClient();
 
 async function main() {
-    client.connect();
+    const client = createClient();
+    await client.connect();
     while(1) {
         const resp = await client.brPop("submissions", 0);
         console.log(resp);
