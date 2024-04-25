@@ -21,7 +21,7 @@ wss.on('connection', function connection(ws) {
 
   ws.send('Hello! Message From Server!!');
 });
-
-server.listen(8080, function() {
-    console.log((new Date()) + ' Server is listening on port 8080');
+const PORT = 8080;
+server.listen(PORT, function() {
+    console.log((new Date()) + `Server is listening on port 8080 ${PORT}`);
 });
