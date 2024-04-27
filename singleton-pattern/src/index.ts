@@ -1,9 +1,9 @@
-import { gameManager} from "./store";
+import { GameManager} from "./store";
 import { startLogger } from "./logger";
 
 
 startLogger();
 
 setInterval(()=>{
-    gameManager.addGame(Math.random.toString());
+    GameManager.getInstance().addGame(Math.random.toString());
 }, 5000);

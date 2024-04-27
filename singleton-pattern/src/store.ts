@@ -5,11 +5,24 @@ interface Game {
     moves: string[];
 }
 
+
+// static variables and methods
+// Singleton Pattern
 export class GameManager {
     games: Game[] = [];
+    private static instance: GameManager;
     
-    constructor() {
+    private constructor() {
         this.games = [];
+    }
+
+    static getInstance() {
+        // Create a single instance of GameManager and return it
+        if(GameManager.instance) {
+            return GameManager.instance;
+        }
+        GameManager.instance = new GameManager();
+        return GameManager.instance;
     }
 
     addMove(gameId: string, move: string) {
@@ -33,4 +46,3 @@ export class GameManager {
     }
 }
 
-export const gameManager = new GameManager();
