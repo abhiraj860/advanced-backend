@@ -12,6 +12,8 @@ export class PubSubManger {
         return PubSubManger.instance;
     }
 
+
+    
     addUserToStock(userId: string, stockTicker: string) {
 
     }
