@@ -1,5 +1,5 @@
-import {describe, expect, test, it} from '@jest/globals';
-import {sum} from '../index';
+import { describe, expect, it } from '@jest/globals';
+import { sum } from '../index';
 
 describe('sum', () => {
   it('adds 1 + 2 to equal 3', () => {
