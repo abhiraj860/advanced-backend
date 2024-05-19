@@ -1,21 +1,24 @@
 import { describe, expect, it } from '@jest/globals';
-import { sum } from '../index';
+import { sum, multiply } from '../index';
 
-describe('sum', () => {
-  it('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+describe('Testing sum function', () => {
+  it('should sum 1 and 2 correctly', () => {
+    const finalAnswer = sum(1, 2);
+    expect(finalAnswer).toBe(3);
   });
-  it('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+  it('should return the sum of negative numbers correctly', ()=>{
+    const finalAnswer = sum(-1, -2);
+    expect(finalAnswer).toBe(-3);
   });
 });
 
-
-describe('multiply', () => {
-  it('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+describe('Testing multiply function', ()=>{
+  it('should multiply 4 and 5', ()=>{
+    const finalAnswer = multiply(4, 5);
+    expect(finalAnswer).toBe(20);
   });
-  it('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+  it('should multiply negative numbers correctly', ()=>{
+    const finalAnswer = multiply(8, -9);
+    expect(finalAnswer).toBe(-72);
   });
 });
