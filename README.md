@@ -4,3 +4,4 @@ Redis
 Websocket-react-fe
 Singleton-pattern
 v-scale
+grpc
