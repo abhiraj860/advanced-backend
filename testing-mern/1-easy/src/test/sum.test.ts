@@ -1,6 +1,10 @@
-import {it, describe, expect} from '@jest/globals';
+import {it, describe, expect, vi} from 'vitest';
 import {app} from '../index';
 import request from "supertest";
+
+
+// deep mocking
+vi.mock("../db");
 
 describe("Test the sum function", ()=>{
     it("should return 3 when 1 + 2", async ()=>{

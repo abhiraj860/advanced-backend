@@ -1,10 +1,11 @@
 import express from 'express';
+import {prismaClient} from "./db";
 
 export const app = express();
 app.use(express.json());
 
 
-app.post('/sum', (req, res)=> {
+app.post('/sum', async(req, res)=> {
     const a = req.body.a;
     const b = req.body.b;
     if(a > 10000000 || b > 1000000) {
@@ -13,13 +14,33 @@ app.post('/sum', (req, res)=> {
         });
     }
     const result = a + b;
+    await prismaClient.request.create(
+        {
+            data: {
+            a: a,
+            b: b,
+            answer: result,
+            type: "Sum"
+        }
+    }
+    );
     return res.json({answer: result});
 });
 
 
-app.post('/multiply', (req, res)=> {
+app.post('/multiply', async (req, res)=> {
     const a = req.body.a;
     const b = req.body.b;
     const result = a * b;
+    await prismaClient.request.create(
+        {
+            data: {
+            a: a,
+            b: b,
+            answer: result,
+            type: "Multiply"
+        }
+    }
+    );
     return res.json({answer: result});
 });
