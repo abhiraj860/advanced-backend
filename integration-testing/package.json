@@ -10,5 +10,12 @@
     "prisma": "^5.15.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0"
+  },
+  "scripts": {
+    "test": "vitest"
   }
 }
